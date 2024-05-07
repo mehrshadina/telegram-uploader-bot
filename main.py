@@ -15,7 +15,7 @@ def main():
     while True:
         getUpdates = get_updates(last_update_id)
         for update in getUpdates["result"]:
-            last_update_id = update["result"]["update_id"] + 1
+            last_update_id = update["update_id"] + 1
             decision_making(update)
 
 if __name__ == '__main__':

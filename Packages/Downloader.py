@@ -29,7 +29,7 @@ def download_file(url, destination_folder="."):
         with open(filename, 'wb') as f:
             f.write(response.content)
         #print("File downloaded successfully:", filename)
-        return filename[2:]
+        return url.split('/')[-1]
     else:
         #print("Failed to download file:", url)
         return None
