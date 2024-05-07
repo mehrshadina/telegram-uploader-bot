@@ -54,5 +54,5 @@ def decision_making(update):
                 text = f'Failed to download file: ❌\n{text}'
                 send_message(chat_id, text)
             else:
-                new_link = f"https://mehrshadina.ir/media/uploader_bot/{filename}"
+                new_link = f"https://mehrshadina.ir/media/uploader-bot/{filename}"
                 send_new_link(chat_id, filename, new_link)
