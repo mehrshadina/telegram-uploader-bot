@@ -1,4 +1,4 @@
-from Packages.Connection import get_updates ,get_last_update_id
+from Packages.Connection import get_updates
 from Packages.Database import check_database, create_table
 from Packages.Decision import decision_making
 #from Packages. import *
@@ -14,8 +14,8 @@ def main():
         create_table()
     while True:
         getUpdates = get_updates(last_update_id)
-        last_update_id = get_last_update_id(getUpdates) + 1
         for update in getUpdates["result"]:
+            last_update_id = update["result"]["update_id"] + 1
             decision_making(update)
 
 if __name__ == '__main__':

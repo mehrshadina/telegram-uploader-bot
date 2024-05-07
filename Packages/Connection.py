@@ -1,6 +1,6 @@
 import requests
 
-TOKEN = "YOUR-BOT-TOKEN"
+TOKEN = "7041348703:AAFe0MpJfHNph0ZwBho7MP3wXUXuN33szf4"
 URL = "https://api.telegram.org/bot%s/"%TOKEN
 
 proxies = {
@@ -23,12 +23,6 @@ def get_updates(offset=None):
         url += "&offset={}".format(offset)
     js = json_from_url(url)
     return js
-
-def get_last_update_id(updates): # vase ofsset
-    update_ids = []
-    for update in updates["result"]:
-        update_ids.append(int(update["update_id"]))
-    return max(update_ids)
 
 def send_message(chat_id, text, reply_markup=dict(), markdown=False, reply_to=None):
     if markdown:
